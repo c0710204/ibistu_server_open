@@ -1,0 +1,21 @@
+	<?php
+include_once("settings/setting.php");
+if (!isset($database_host)) $link_database_host=$GLOBALS["database_host"];
+if (!isset($database_user)) $link_database_user=$GLOBALS["database_user"];
+if (!isset($database_pass)) $link_database_pass=$GLOBALS["database_pass"];
+if (!isset($database_dbname)) $link_database_dbname=$GLOBALS["database_dbname"];
+if (!isset($database_port)) $link_database_port=$GLOBALS["database_port"];
+$dblink = mysql_connect($link_database_host.":".$link_database_port,$link_database_user,$link_database_pass);
+$err=$dblink.mysql_errno();
+if ($err!=0)
+{
+	echo "<br/>MYSQL Connecting Fail ,Code=".$err."<br/>";
+	return -1;
+}
+mysql_set_charset('utf8'); 
+$err=mysql_select_db($link_database_dbname,$dblink);
+if($err!=0)
+{
+	return -2;	
+}
+?>

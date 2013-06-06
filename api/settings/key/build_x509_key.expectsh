@@ -1,0 +1,22 @@
+#!/usr/bin/expect
+spawn openssl req -x509 -out ibistu_publicKey_ios.der -outform der -new -newkey rsa:1024 -keyout ibistu_privateKey_ios.pem
+expect "phrase:"
+send "1234\n"
+expect "phrase:"
+send "1234\n"
+expect "]:"
+send "\n"
+expect "]:"
+send "\n"
+expect "]:"
+send "\n"
+expect "]:"
+send "\n"
+expect "]:"
+send "\n"
+expect "]:"
+send "\n"
+expect "]:"
+send "\n"
+expect eof
+exit

@@ -1,0 +1,9 @@
+video/
+photos/
+errorlog/
+album/
+api/log/
+api/cache
+pma/
+temp/
+
